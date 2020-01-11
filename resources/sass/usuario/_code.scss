@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'PatrickHand-Regular';
+    src: url('/fonts/PatrickHand-Regular.eot');
+    src: url('/fonts/PatrickHand-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/PatrickHand-Regular.svg#PatrickHand-Regular') format('svg'),
+         url('/fonts/PatrickHand-Regular.ttf') format('truetype'),
+         url('/fonts/PatrickHand-Regular.woff') format('woff'),
+         url('/fonts/PatrickHand-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
+nav.navbar.fixed-top.navbar-expand-lg.navbar-light {
+    box-shadow: 1px 2px 5px #e1e1e1;
+    background-color: #fff;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
+    margin: auto;
+}
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.9);
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    display: block;
+    font-family: 'PatrickHand-Regular';
+    text-transform: uppercase;
+}
+
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li {
+    display: flex;
+}
+
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li a {
+    height: 50px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    font-family: 'PatrickHand-Regular';
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li a:hover {
+    color: #3f7bab;
+    text-decoration: line-through!important;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li a:hover::before {
+    content: '';
+    height: 2px;
+    width: 10px;
+    background-color: #3f7bab;
+    bottom: 0;
+    position: absolute;
+}
+
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li.nav-item ul.menu-dos {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0em;
+    margin-block-start: 0em;
+    -webkit-margin-after: 0em;
+    margin-block-end: 0em;
+    -webkit-margin-start: 0;
+    margin-inline-start: 0;
+    -webkit-margin-end: 0;
+    margin-inline-end: 0;
+    -webkit-padding-start: 0;
+    padding-inline-start: 0;
+    padding-right: .5rem;
+    padding-left: 3.5rem;
+    margin: auto;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li.nav-item ul.menu-dos li {
+    display: inline-block;
+    padding: 0 5px 0 5px;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li.nav-item ul.menu-dos li a {
+    color: #000;
+    height: 35px;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li.nav-item ul.menu-dos li a:hover {
+    color: #3f7bab;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li a span.circulo {
+    position: absolute;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 20px;
+    display: block;
+    margin: 0;
+    left: 15px;
+    bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+}
