@@ -1,4 +1,6 @@
-@include('admin.header')
+@extends('layouts.admin')
+
+@section('content-admin')
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Smokeshopmex</a>
@@ -20,7 +22,10 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="zmdi zmdi-home zmdi-hc-lg"></i> Inicio</a>
+              <a class="nav-link" href="{{ route('admin.admin') }}"><i class="zmdi zmdi-home zmdi-hc-lg"></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-accounts-outline zmdi-hc-lg"></i> Usuarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"> <i class="zmdi zmdi-book zmdi-hc-lg"></i> Ordenes</a>
@@ -28,6 +33,8 @@
             <li class="nav-item">
               <a class="nav-link" href="#"> <i class="zmdi zmdi-shopping-basket zmdi-hc-lg"></i> Productos </a>
             </li>
+
+
           </ul>
         </div>
     </div>
@@ -57,4 +64,4 @@
   </div>
 
 
-@include('admin.footer')
+@endsection

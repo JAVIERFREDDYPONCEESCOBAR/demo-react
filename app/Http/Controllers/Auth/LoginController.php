@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use App\Modelo\admin\User;
+use App\Modelo\admin\Role;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -26,7 +31,9 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //public $redirectTo ='/admin';
+    //protected $redirectTo = RouteServiceProvider::HOME;
+    
 
     /**
      * Create a new controller instance.
@@ -37,4 +44,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+    protected function redirectTo(){
+        
+        if(Auth::user()->hasRole('admin')){
+            $this->redirectTo = route('admin.users.index');
+            return $this->redirectTo;
+
+        }
+
+        $this->redirectTo = route('admin.admin');
+        return $this->redirectTo;
+    }
+
+
+
 }
