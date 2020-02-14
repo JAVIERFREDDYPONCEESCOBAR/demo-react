@@ -9,7 +9,12 @@
     font-weight: normal;
     font-style: normal;
   }
- 
+ main.pt-4, .py-4 {
+    padding-top:0!important; 
+}
+.sidebar-sticky {
+    background-color: black;
+}
 nav.navbar.fixed-top.navbar-expand-lg.navbar-light {
     box-shadow: 1px 2px 5px #e1e1e1;
     background-color: #fff;
@@ -26,6 +31,21 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
     font-family: 'PatrickHand-Regular';
     text-transform: uppercase;
 }
+
+ul.navbar-nav.px-3.menu-usuario{
+    width: auto;
+    display: block;
+}
+.sin-padding{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+ul.navbar-nav.px-3.menu-usuario li.nav-item{
+    display: inline-block;
+    margin: auto;
+    padding: 5px;
+}
+
 
 ul.navbar-nav.mr-auto.mt-2.mt-lg-0 li {
     display: flex;

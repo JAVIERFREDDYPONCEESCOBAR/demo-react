@@ -1,7 +1,10 @@
 <?php
-
-namespace App\Http\Controllers;
-use App\Modelo\usuario\Usuario;
+namespace App\Http\Controllers\usuario;
+use App\Modelo\admin\Role;
+use App\Modelo\admin\User;
+//use App\Modelo\usuario\Usuario;
+use App\Http\Controllers\Controller;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -13,7 +16,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-    
+        return view('usuario.inicio');
     }
 
     /**
