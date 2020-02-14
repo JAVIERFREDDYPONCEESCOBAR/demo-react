@@ -5,6 +5,7 @@ namespace App\Modelo\admin;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spinen\QuickBooks\Laravel\HasQuickBooksToken;
 
 class User extends Authenticatable
 {
@@ -42,12 +43,10 @@ class User extends Authenticatable
     }
 
     public function hasAnyRoles($roles){
-
-      if($this->roles()->where('name',$role)->first()){
-          return true;
-      }
-
-      return false;
+            if($this->roles()->where('name',$role)->first()){
+                return true;
+            }
+            return false;
     }
 
 
@@ -55,10 +54,10 @@ class User extends Authenticatable
         if($this->roles()->where('name',$role)->first()){
             return true;
         }
-  
         return false;
-
     }
+    
+
 
 
 }

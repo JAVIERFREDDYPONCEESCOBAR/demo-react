@@ -72183,7 +72183,7 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Javier Freddy Ponce\documents\Sitios web\laravel-smoke-v1\resources\js\administrador\admin.js */"./resources/js/administrador/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Javier Freddy Ponce\Documents\Sitios web\laravel-smoke-v1\resources\js\administrador\admin.js */"./resources/js/administrador/admin.js");
 
 
 /***/ })

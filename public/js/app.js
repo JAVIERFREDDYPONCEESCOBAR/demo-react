@@ -72224,9 +72224,9 @@ __webpack_require__(/*! ./../components/Example */ "./resources/js/components/Ex
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Javier Freddy Ponce\documents\Sitios web\laravel-smoke-v1\resources\js\usuario\app.js */"./resources/js/usuario/app.js");
-__webpack_require__(/*! C:\Users\Javier Freddy Ponce\documents\Sitios web\laravel-smoke-v1\resources\sass\usuario\app.scss */"./resources/sass/usuario/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Javier Freddy Ponce\documents\Sitios web\laravel-smoke-v1\resources\sass\administrador\admin.scss */"./resources/sass/administrador/admin.scss");
+__webpack_require__(/*! C:\Users\Javier Freddy Ponce\Documents\Sitios web\laravel-smoke-v1\resources\js\usuario\app.js */"./resources/js/usuario/app.js");
+__webpack_require__(/*! C:\Users\Javier Freddy Ponce\Documents\Sitios web\laravel-smoke-v1\resources\sass\usuario\app.scss */"./resources/sass/usuario/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Javier Freddy Ponce\Documents\Sitios web\laravel-smoke-v1\resources\sass\administrador\admin.scss */"./resources/sass/administrador/admin.scss");
 
 
 /***/ })

@@ -21,3 +21,4 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->
      Route::resource('/users', 'UsersController', ['except'=>['show','create','store']]);
      Route::get('/', 'AdminController@index')->name('admin');
 });
+//Route::view('some/route/needing/quickbooks/token/before/using', 'some.view')->middleware('quickbooks');

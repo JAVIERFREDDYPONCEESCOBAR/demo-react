@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers\admin;
+
 
 use App\Http\Controllers\Controller;
 use App\Modelo\admin\User;
@@ -8,28 +8,35 @@ use App\Modelo\admin\Role;
 use Gate;
 use Illuminate\Http\Request;
 
+
 class UsersController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
-
     }
 
     public function mirole()
     {
         return $this->belongsTo('Gestor\roles', 'name');
     }
+    
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
        $users = User::all();
        return view('admin.usuarios',['users'=>$users]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

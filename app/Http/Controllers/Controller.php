@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Modelo\admin\User;
+use App\Modelo\admin\Role;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
