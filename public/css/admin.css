@@ -14991,6 +14991,14 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: "PatrickHand-Regular";
+  src: url("/fonts/PatrickHand-Regular.eot");
+  src: url("/fonts/PatrickHand-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/PatrickHand-Regular.svg#PatrickHand-Regular") format("svg"), url("/fonts/PatrickHand-Regular.ttf") format("truetype"), url("/fonts/PatrickHand-Regular.woff") format("woff"), url("/fonts/PatrickHand-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -15002,14 +15010,65 @@ body {
   background-color: #fff;
 }
 
+nav.bg-black {
+  background-color: #000;
+}
+
+a.navbar-brand {
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  display: block;
+  font-family: "PatrickHand-Regular";
+  text-transform: uppercase;
+}
+
+a.logo {
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+  font-size: 30px;
+  display: block;
+  font-family: "PatrickHand-Regular";
+  text-transform: uppercase;
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  line-height: inherit;
+  white-space: nowrap;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.borde-monitor {
+  border-bottom: 1px solid #dee2e6 !important;
+  padding-top: 1rem !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  -webkit-box-align: center !important;
+          align-items: center !important;
+  display: -webkit-box !important;
+  display: flex !important;
+}
+
 .sin-padding-left {
   padding-left: 0px;
 }
 
-.separadorheader {
-  height: 50px;
-  width: 100%;
-  display: block;
+.sin-padding {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 ul.nav.flex-column {

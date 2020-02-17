@@ -11,7 +11,7 @@
   
       <div  class="col-md-10">
           <div class="borde-monitor">
-            <h2>Inicio</h2>
+            <h2>Productos</h2>
           </div>
 
       </div>

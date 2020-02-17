@@ -20,11 +20,15 @@ Auth::routes();
 Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
      Route::resource('/users', 'UsersController', ['except'=>['show','create','store']]);
      Route::get('/', 'AdminController@index')->name('admin');
+     Route::get('/productos', 'ProductosController@index')->name('productos');
 });
 
 //Route::view('some/route/needing/quickbooks/token/before/using', 'some.view')->middleware('quickbooks');
 
 Route::namespace('usuario')->prefix('usuario')->name('usuario.')->middleware('auth')->group(function(){
-    Route::resource('/usuario', 'UsuarioController');
+    Route::resource('/usuario', 'UsuarioController',['except'=>['show','create','store','edit','destroy']]);
     Route::get('/', 'UsuarioController@index')->name('usuario');
+    Route::get('/carrito', 'CarritoController@index')->name('carrito');
+    Route::get('/productos', 'ProductosController@index')->name('productos');
+    Route::get('/pedidos', 'PedidosController@index')->name('pedidos');
 });
