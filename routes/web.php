@@ -26,7 +26,7 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->
 //Route::view('some/route/needing/quickbooks/token/before/using', 'some.view')->middleware('quickbooks');
 
 Route::namespace('usuario')->prefix('usuario')->name('usuario.')->middleware('auth')->group(function(){
-    Route::resource('/usuario', 'UsuarioController',['except'=>['show','create','store','edit','destroy']]);
+    Route::resource('/usuario', 'UsuarioController',['except'=>['show','create','store','destroy']]);
     Route::get('/', 'UsuarioController@index')->name('usuario');
     Route::get('/carrito', 'CarritoController@index')->name('carrito');
     Route::get('/productos', 'ProductosController@index')->name('productos');

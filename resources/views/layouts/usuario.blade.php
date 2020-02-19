@@ -64,9 +64,27 @@
                             <a class="nav-link" href="{{ route('usuario.carrito') }}"> <i class="zmdi zmdi-shopping-cart zmdi-hc-lg"></i>carrito</a>
                           </li>
 
-                            <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="zmdi zmdi-account-o zmdi-hc-lg"></i>  {{ Auth::user()->name }}
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{URL::to('/')}}/usuario/{{Auth::user()->id}}/edit"> 
+                               {{-- <a class="nav-link"> --}}
+                                        <i class="zmdi zmdi-account-o zmdi-hc-lg"></i>{{ Auth::user()->name }}
+                               </a> 
+                          </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout')}}"  onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                <i class="zmdi zmdi-square-right zmdi-hc-lg"></i>Salir
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                @csrf
+                            </form>
+                        </li>
+                        
+
+                    {{-- <li class="nav-item dropdown">
+                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <i class="zmdi zmdi-account-o zmdi-hc-lg"></i>  {{ Auth::user()->name }}
                                 </a>
                             
 
@@ -82,7 +100,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                         @endguest
                     </ul>
                 </div>
