@@ -203,24 +203,37 @@ table.table.table-bordered.table-hover tbody tr td{
     color: #000;
     font-family: 'PatrickHand-Regular';
     text-align: center;
+    padding: 2px;
+    height: 50px;
 }
-
+table.table.table-bordered.table-hover tbody tr td .alinear{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    margin: auto;
+    padding: 3px;
+}
+table.table.table-bordered.table-hover tbody tr td .alinear label{
+    margin: auto;
+    padding: 0;
+}
 table.table.table-bordered.table-hover tbody tr td a.btn-table{ 
     text-decoration: none;
     display: inline-block;
     text-transform: uppercase;
-    width: 150px;
+    width: 120px;
     height: 40px;
     background-color: #fff;
-    padding: 5px 15px 5px 15px;
+    padding: 7px;
     color: #000;
-    border:1px solid #313a46;
-    font-family: 'PatrickHand-Regular';
+    border: 1px solid #313a46;
+    font-family: "PatrickHand-Regular";
     text-align: center;
-    font-size: 1rem;
+    font-size: 15px;
     line-height: 1.5;
     border-radius: 0.25rem;
     cursor: pointer;
+    margin: auto;
 }
 table.table.table-bordered.table-hover tbody tr td a.btn-table:hover{
     color: #fff;
