@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\admin;
 use App\Modelo\admin\User;
 use App\Modelo\admin\Role;
@@ -7,31 +6,17 @@ use App\Modelo\admin\Products;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProductosController extends Controller
+class ProductosClienteController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function mirole()
-    {
-        return $this->belongsTo('Gestor\roles', 'name');
-    }
-    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
- 
-
     public function index()
     {
-        $Products = Products::all();
-        return view('admin.productos',['products'=>$Products]);
-
-        
+        return view('admin.product.index');
+        //db('freddy');
     }
 
     /**

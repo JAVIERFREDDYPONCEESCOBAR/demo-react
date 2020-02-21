@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-black shadow-sm">
             <div class="container-fluid">
                 <a class="logo" href="{{ route('admin.admin') }}">
                     {{ config('app.name', 'Laravel') }}

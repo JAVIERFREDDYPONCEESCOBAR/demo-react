@@ -7,7 +7,7 @@
             <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-accounts-outline zmdi-hc-lg"></i> Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.productos') }}"> <i class="zmdi zmdi-shopping-basket zmdi-hc-lg"></i> Productos </a>
+            <a class="nav-link" href="{{ route('admin.productos.index') }}"> <i class="zmdi zmdi-shopping-basket zmdi-hc-lg"></i> Productos </a>
           </li>
 
           <li class="nav-item">

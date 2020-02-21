@@ -89,7 +89,7 @@ nav.bg-black{
     top: 0;
 }
 .color-menu-admin{
-    position: absolute;
+    position:fixed;
     background-color: #313a46;
     width: 120px;
     height: 100%;
@@ -131,6 +131,7 @@ a.logo{
     margin-bottom: 1rem!important;
     align-items: center!important;
     display: flex!important;
+    margin-top: 70px;
 }
 .sin-padding-left{
     padding-left: 0px;
@@ -179,7 +180,25 @@ ul.nav.flex-column li form.btn_admin:hover i,button{
 ul.nav.flex-column li form.btn_admin:hover button{
     color:#bccee4;
 }
-
+table.table.table-bordered.table-hover tbody tr th{
+    color: #000;
+    font-family: 'PatrickHand-Regular';
+    text-align: center;
+    padding: 2px;
+    height: 50px;
+}
+table.table.table-bordered.table-hover tbody tr th .alinear{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    margin: auto;
+    padding: 3px;
+}
+table.table.table-bordered.table-hover tbody tr th .alinear label{
+    margin: auto;
+    display: block;
+    padding: 0;
+}
 table.table.table-bordered.table-hover tbody tr td form.btn_admin{
     display: inline-block;
 }
@@ -213,6 +232,14 @@ table.table.table-bordered.table-hover tbody tr td .alinear{
     margin: auto;
     padding: 3px;
 }
+table.table.table-bordered.table-hover tbody tr td .alinear img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    padding: 0;
+}
+
 table.table.table-bordered.table-hover tbody tr td .alinear label{
     margin: auto;
     padding: 0;

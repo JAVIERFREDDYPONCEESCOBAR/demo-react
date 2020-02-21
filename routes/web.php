@@ -19,8 +19,9 @@ Auth::routes();
 Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
      //Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
      Route::resource('/users', 'UsersController');
+     Route::resource('/productos', 'ProductosController');
+     Route::resource('/producto', 'ProductosClienteController');
      Route::get('/', 'AdminController@index')->name('admin');
-     Route::get('/productos', 'ProductosController@index')->name('productos');
 });
 
 //Route::view('some/route/needing/quickbooks/token/before/using', 'some.view')->middleware('quickbooks');

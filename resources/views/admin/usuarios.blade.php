@@ -19,6 +19,7 @@
             </div>
             <div class="col-md-6 ">
               <ul>
+
                 <li>
                   <a class="btn_agregar_user" href="{{ route('admin.users.edit',Auth::user()->id)}}">
                     <i class="zmdi zmdi-account-add zmdi-hc-lg"></i> 
@@ -29,7 +30,10 @@
                     @method('GET')
                   </form>
                 </li>
+
               </ul>
+
+
             </div>
           </div>
           </div>
@@ -100,8 +104,8 @@
             </td>
             <td>
               <div class="alinear">
-               <a href="" class="btn-table"><i class="zmdi zmdi-eye"></i> Productos</a>
-              <form class="btn_admin" action="{{ route('admin.users.destroy', $user->id)}}" method="POST">
+               <a href="{{route('admin.producto.index')}}" class="btn-table"><i class="zmdi zmdi-eye"></i> Productos</a>
+              <form class="btn_admin" action="{{ route('admin.producto.index')}}" method="POST">
                 @csrf
                 @method('POST')
               </form>
