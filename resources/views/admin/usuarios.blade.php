@@ -10,6 +10,7 @@
 
   
       <div  class="col-md-10 offset-md-2">
+
         <div class="borde-monitor">
           <div class="col-md-12">
           <div class="row">
@@ -19,7 +20,7 @@
             <div class="col-md-6 ">
               <ul>
                 <li>
-                  <a class="btn_agregar_user" href="#">
+                  <a class="btn_agregar_user" href="{{ route('admin.users.edit',Auth::user()->id)}}">
                     <i class="zmdi zmdi-account-add zmdi-hc-lg"></i> 
                     Agregar Usuario
                   </a>

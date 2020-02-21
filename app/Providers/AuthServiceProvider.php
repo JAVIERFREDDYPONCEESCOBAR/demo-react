@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('manage-users',function($user){
-                return $user->hasAnyRole(['admin','author']);
+                return $user->hasAnyRole(['admin','cliente']);
         });
 
         Gate::define('edit-users',function($user){

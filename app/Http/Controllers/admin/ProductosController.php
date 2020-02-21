@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
+use App\Modelo\admin\User;
+use App\Modelo\admin\Role;
+use App\Modelo\admin\Products;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

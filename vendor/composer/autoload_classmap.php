@@ -30,6 +30,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Modelo\\admin\\Products' => $baseDir . '/app/Modelo/admin/Products.php',
     'App\\Modelo\\admin\\Role' => $baseDir . '/app/Modelo/admin/Role.php',
     'App\\Modelo\\admin\\User' => $baseDir . '/app/Modelo/admin/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
