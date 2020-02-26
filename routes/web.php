@@ -21,6 +21,7 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->
      Route::resource('/users', 'UsersController');
      Route::resource('/productos', 'ProductosController');
      Route::resource('/producto', 'ProductosClienteController');
+
      Route::get('/', 'AdminController@index')->name('admin');
 });
 

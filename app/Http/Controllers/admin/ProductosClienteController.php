@@ -3,20 +3,41 @@ namespace App\Http\Controllers\admin;
 use App\Modelo\admin\User;
 use App\Modelo\admin\Role;
 use App\Modelo\admin\Products;
+use App\Modelo\admin\Productoscliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProductosClienteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function mirole()
+    {
+        return $this->belongsTo('Gestor\roles', 'name');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
-    {
-        return view('admin.product.index');
-        //db('freddy');
+    {    
+        $Products = Products::all();
+        $Productscliente = Productoscliente::all();
+        return view('admin.product.index',['products'=>$Products]);
+        //dd('freddy');
+    }
+
+    public function agregar_productos_usuario()
+    {    
+        $Products = Products::all();
+        $Productscliente = Productoscliente::all();
+        return view('admin.product.index',['products'=>$Products]);
+        //dd('freddy');
     }
 
     /**
