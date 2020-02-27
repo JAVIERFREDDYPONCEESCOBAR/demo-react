@@ -33,7 +33,7 @@ class UsersController extends Controller
     public function index()
     {
        $users = User::all();
-       return view('admin.usuarios',['users'=>$users]);
+       return view('admin.usuario.index',['users'=>$users]);
     }
 
 
@@ -45,7 +45,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.usuario.agregar');
     }
 
     /**
@@ -78,12 +78,12 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-       if(Gate::denies('edit-users')){
-          return redirect(route('admin.users.index'));
-        }
+       //if(Gate::denies('edit-users')){
+          return redirect(route('admin.usuario.index'));
+    //}
 
         $roles = Role::all();
-        return view('admin.usuarios.edit')->witch([
+        return view('admin.usuario.edit')->witch([
             'user'=>$user,
             'roles'=>$roles
         ]);

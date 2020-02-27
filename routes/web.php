@@ -20,8 +20,9 @@ Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('auth')->
      //Route::namespace('admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
      Route::resource('/users', 'UsersController');
      Route::resource('/productos', 'ProductosController');
-     Route::resource('/producto', 'ProductosClienteController');
-
+     Route::resource('/producto', 'ProductosClienteController',['except'=>['index']]);
+     Route::post('/producto', 'ProductosClienteController@index')->name('producto');;
+     Route::post('/producto/agregarprodustos', 'ProductosClienteController@agregar_productos_usuario')->name('producto.agregar');
      Route::get('/', 'AdminController@index')->name('admin');
 });
 

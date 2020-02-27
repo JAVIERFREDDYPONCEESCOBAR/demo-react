@@ -31,7 +31,6 @@ class ProductosController extends Controller
         $Products = Products::all();
         return view('admin.productos',['products'=>$Products]);
 
-        
     }
 
     /**

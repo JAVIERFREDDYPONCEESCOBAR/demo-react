@@ -23,7 +23,7 @@
                 <li>
                   <a class="btn_agregar_user" href="#">
                     <i class="zmdi zmdi zmdi-chart-donut zmdi-hc-lg"></i> 
-                    Agregar Productos a usuario
+                    Agregar Productos : {{$user_nombre}}
                   </a>
                 </li>
 

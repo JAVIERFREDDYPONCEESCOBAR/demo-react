@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\admin;
+use Illuminate\Support\Facades\Log;
 use App\Modelo\admin\User;
 use App\Modelo\admin\Role;
 use App\Modelo\admin\Products;
@@ -24,17 +25,16 @@ class ProductosClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {    
+        Log::info($request);
         $Products = Products::all();
-        $Productscliente = Productoscliente::all();
-        return view('admin.product.index',['products'=>$Products]);
-        //dd('freddy');
+        return view('admin.product.index',['products'=>$Products,'user_nombre'=>$request->user_name_modificar]);
     }
 
     public function agregar_productos_usuario()
     {    
-        $Products = Products::all();
+        $Products = 'freddy funciona';
         $Productscliente = Productoscliente::all();
         return view('admin.product.index',['products'=>$Products]);
         //dd('freddy');

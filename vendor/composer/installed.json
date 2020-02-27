@@ -1026,17 +1026,17 @@
     },
     {
         "name": "laravel/framework",
-        "version": "v6.17.0",
-        "version_normalized": "6.17.0.0",
+        "version": "v6.17.1",
+        "version_normalized": "6.17.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "40fd590b93f060f2ebe407b3e6d29e66b0e57fbb"
+            "reference": "32d1ed55dd46dcd706ff2e45bb7965be7320b87d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/40fd590b93f060f2ebe407b3e6d29e66b0e57fbb",
-            "reference": "40fd590b93f060f2ebe407b3e6d29e66b0e57fbb",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/32d1ed55dd46dcd706ff2e45bb7965be7320b87d",
+            "reference": "32d1ed55dd46dcd706ff2e45bb7965be7320b87d",
             "shasum": ""
         },
         "require": {
@@ -1138,7 +1138,7 @@
             "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
             "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
         },
-        "time": "2020-02-25T15:07:46+00:00",
+        "time": "2020-02-26T14:23:01+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2251,17 +2251,17 @@
     },
     {
         "name": "phpdocumentor/reflection-docblock",
-        "version": "5.0.0",
-        "version_normalized": "5.0.0.0",
+        "version": "5.1.0",
+        "version_normalized": "5.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-            "reference": "a48807183a4b819072f26e347bbd0b5199a9d15f"
+            "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/a48807183a4b819072f26e347bbd0b5199a9d15f",
-            "reference": "a48807183a4b819072f26e347bbd0b5199a9d15f",
+            "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
+            "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
             "shasum": ""
         },
         "require": {
@@ -2275,7 +2275,7 @@
             "doctrine/instantiator": "^1",
             "mockery/mockery": "^1"
         },
-        "time": "2020-02-09T09:16:15+00:00",
+        "time": "2020-02-22T12:28:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
