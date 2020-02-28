@@ -21,10 +21,25 @@
               <ul>
 
                 <li>
-                  <a class="btn_agregar_user" href="#">
-                    <i class="zmdi zmdi zmdi-chart-donut zmdi-hc-lg"></i> 
-                    Agregar Productos : {{$user_nombre}}
-                  </a>
+                  <form name="productos_user_dos" class="btn_admin productos_user_dos" action="{{ route('admin.producto')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="mostrar_producto"    value="si">
+                    <input type="hidden" name="user_name_modificar" value="{{$user_nombre}}">
+                    <input type="hidden" name="user_id_modificar"   value="{{$user_id}}">
+                    <button class="btn-table" type="submit"><i class="zmdi zmdi-chart-donut"></i> Agregar Productos : {{$user_nombre}}</button>
+                    @method('POST')
+                  </form>
+                </li>
+                <li>
+                  <form name="productos_user_dos" class="btn_admin productos_user_dos" action="{{ route('admin.producto')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="mostrar_producto"     value="no">
+                    <input type="hidden" name="user_name_modificar"  value="{{$user_nombre}}">
+                    <input type="hidden" name="user_id_modificar"    value="{{$user_id}}">
+                    <button class="btn-table" type="submit"><i class="zmdi zmdi-window-minimize"></i> Quitar Productos : {{$user_nombre}}</button>
+                    @method('POST')
+                  </form>
+
                 </li>
 
               </ul>
@@ -57,7 +72,8 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($products as $product )
+
+                {{-- @foreach ($products as $product )
                 <tr>
                   <th class="num_id">              
                     <div class="alinear">
@@ -142,7 +158,7 @@
                   </td>
                 </tr>
                     
-                @endforeach
+                @endforeach --}}
       
              
           

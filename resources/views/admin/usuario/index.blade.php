@@ -76,6 +76,7 @@
             <td>
               <div class="alinear">
                 <label>
+                  {{ implode(',',$user->roles()->get()->pluck('name')->toArray() )}}
                 </label>
               </div>
             </td>
@@ -112,8 +113,6 @@
             </td>
             <td>
               <div class="alinear">
-               {{-- <a class="btn-table">
-                <i class="zmdi zmdi-eye"></i> Productos</a> --}}
               <form name="productos_user" class="btn_admin ver-user-product" action="{{ route('admin.producto')}}" method="POST">
                 @csrf
                 <input type="hidden" name="user_id_modificar" value="{{$user->id}}">
@@ -122,16 +121,14 @@
                 @method('POST')
               </form>
 
-               <a href="" class="btn-table"><i class="zmdi zmdi-edit"></i> Editar</a>
-              <form class="btn_admin" action="{{ route('admin.users.edit', $user->id)}}" method="GET">
-                @csrf
-                @method('GET')
-              </form>
+               <a href="{{route('admin.users.edit', $user->id)}}" class="btn-table"><i class="zmdi zmdi-edit"></i> Editar</a>
 
-               <a href="" class="btn-table"> <i class="zmdi zmdi-delete"></i> Eliminar</a>
-              <form class="btn_admin" action="{{ route('admin.users.destroy', $user->id)}}" method="DELETE">
+
+              <form  name="productos_user" class="btn_admin ver-user-product" action="{{route('admin.users.destroy',$user->id)}}" method="POST">
                 @csrf
+                <button class="btn-table" type="submit"><i class="zmdi zmdi-delete"></i> Eliminar</button>
                 @method('DELETE')
+               
               </form>
 
               </div>

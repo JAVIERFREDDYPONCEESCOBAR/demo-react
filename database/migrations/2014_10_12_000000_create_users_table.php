@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('edad');
             $table->string('genero');
+            $table->string('productos_activados');
             $table->rememberToken();
             $table->timestamps();
         });

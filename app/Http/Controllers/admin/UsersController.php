@@ -1,7 +1,10 @@
 <?php
 namespace App\Http\Controllers\admin;
 
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Modelo\admin\User;
 use App\Modelo\admin\Role;
@@ -30,7 +33,7 @@ class UsersController extends Controller
      */
 
 
-    public function index()
+    public function index(Request $request)
     {
        $users = User::all();
        return view('admin.usuario.index',['users'=>$users]);
@@ -45,7 +48,11 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.usuario.agregar');
+        $roles = Role::all();
+        return view('admin.usuario.agregar',[
+            'roles'=>$roles
+        ]);
+
     }
 
     /**
@@ -56,7 +63,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosUsuario=request()->all();
+
     }
 
     /**
@@ -78,14 +86,16 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-       //if(Gate::denies('edit-users')){
-          return redirect(route('admin.usuario.index'));
-    //}
+       //  if(Gate::denies('edit-users')){
+       //  return redirect(route('admin.usuario.index'));
+       //  }
+       $show = User::findOrFail($user->id);
 
         $roles = Role::all();
-        return view('admin.usuario.edit')->witch([
+        return view('admin.usuario.edit',[
             'user'=>$user,
-            'roles'=>$roles
+            'roles'=>$roles,
+            'aeditar'=>$show
         ]);
 
     }
@@ -122,11 +132,37 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-            if(Gate::denies('delete-users')){
-                return redirect(route('admin.users.index'));
-            }
-            $user->roles()->detach();
-            $user->delete();
-            return redirect()->route('admin.users.index');
+        dd('Eliminando:'.$user->id);
+              //  if(Gate::denies('delete-users')){
+             //   return redirect(route('admin.users.index'));
+            //    }
+           
+           
+           // $user->roles()->detach();
+          //  $user->delete();
+         //   return redirect()->route('admin.users.index');
     }
+
+    private function validateData($data){
+
+        return $this->validate($data,[
+            'promo_fecha_inicio'       => ['required'],
+            'promo_fecha_termino'      => ['required'],
+            'periodo'                  => ['required'],
+            'plaza'                    => ['required'],
+            'imagen'                   => (!$data->id || $data->imagen) ? ['required','image:png,jpeg,jpg','dimensions:width=500','dimensions:height=600'] : ''
+        ],
+        [
+
+            'periodo.required'=>'Periodo requerido',
+            'plaza.required'=>'Plaza requerida',
+            'promo_fecha_inicio.required'=>'Fecha requerida',
+            'promo_fecha_termino.required'=>'Fecha requerida',
+            'imagen.dimensions'=>'La imagen no es de las dimenciones soportadas',
+            'imagen.required'=>'Imagen requerida'
+        ]);
+    }
+
+
+
 }

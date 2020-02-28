@@ -1,7 +1,7 @@
-require('jquery');
-require('jquery-validation/dist/jquery.validate.js');
-require('jquery-validation/dist/additional-methods.js');
-//require('owl.carousel/dist/owl.carousel.min.js');
-require('popper.js/dist/popper.min.js');
-require('./../bootstrap');
-require('./../components/Example');
+import 'jquery';
+import 'popper.js';
+import 'bootstrap';
+import 'jquery-validation/dist/jquery.validate.js';
+import 'jquery-validation/dist/additional-methods.js';
+import 'owl.carousel';
+import '../usuario/code.js';

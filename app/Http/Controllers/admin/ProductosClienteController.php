@@ -28,8 +28,18 @@ class ProductosClienteController extends Controller
     public function index(Request $request)
     {    
         Log::info($request);
+        // if(empty($request->mostrar_producto)){
+        //     $mostarproducto = 
+        // }
+        
+
         $Products = Products::all();
-        return view('admin.product.index',['products'=>$Products,'user_nombre'=>$request->user_name_modificar]);
+        return view('admin.product.index',
+        ['products'  =>$Products,
+        'user_nombre'=>$request->user_name_modificar,
+        'user_id'    =>$request->user_id_modificar
+        ]);
+    
     }
 
     public function agregar_productos_usuario()

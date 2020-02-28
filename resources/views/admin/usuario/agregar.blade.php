@@ -68,23 +68,24 @@
 
 
      <div class="form-group row">
-        <div class="col-md-6">
-        <label for="genero">Genero</label>
-         <select id="genero" name="genero" class="custom-select" required>
-            <option value="" disabled selected>Selecciona una opción</option>
-            <option value="1">M</option>
-            <option value="2">F</option>
-          </select>
-     </div>
-        <div class="col-md-6">
-        <label for="tipo_usuario">Tipo rol</label>
-        <select id="tipo_usuario" name="tipo_usuario" class="custom-select" required>
-           <option value="" disabled selected>Selecciona una opción</option>
-           <option value="admin">Administrador</option>
-           <option value="cliente">Cliente</option>
-           {{-- <option value="user">Usuario</option> --}}
-         </select>
-    </div>
+      <div class="col-md-6">
+      <label for="genero">Genero</label>
+       <select id="genero" name="genero" class="custom-select" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Masculino">M</option>
+          <option value="Femenino">F</option>
+        </select>
+   </div>
+      <div class="col-md-6">
+      <label for="tipo_usuario">Tipo rol</label>
+      <select id="tipo_usuario" name="tipo_usuario" class="custom-select" required>
+         <option value="" disabled selected>Selecciona una opción</option>
+         @foreach ($roles as $role)
+             <option value="{{$role->id}}">{{$role->name}}</option>
+         @endforeach
+         
+       </select>
+  </div>
 </div>
 
     <div class="form-group row">

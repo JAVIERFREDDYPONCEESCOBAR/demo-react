@@ -25,7 +25,8 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('admin'),
             'telefono'=>'7711189852',
             'edad'=>'30',
-            'genero'=>'Masculino'
+            'genero'=>'Masculino',
+            'productos_activados'=>'no'
         ]);
 
         $cliente = User::create([
@@ -34,7 +35,8 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('cliente'),
             'telefono'=>'7711189852',
             'edad'=>'30',
-            'genero'=>'Masculino'
+            'genero'=>'Masculino',
+            'productos_activados'=>'no'
         ]);
 
         $user = User::create([
@@ -43,7 +45,8 @@ class UsersTableSeeder extends Seeder
             'password'=> Hash::make('user'),
             'telefono'=>'7711189852',
             'edad'=>'30',
-            'genero'=>'Masculino'
+            'genero'=>'Masculino',
+            'productos_activados'=>'no'
         ]);
 
         $admin->roles()->attach($adminRole);

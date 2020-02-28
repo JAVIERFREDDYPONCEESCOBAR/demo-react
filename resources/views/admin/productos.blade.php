@@ -117,11 +117,8 @@
                     <div class="alinear">
 
       
-                     <a href="" class="btn-table"><i class="zmdi zmdi-edit"></i> Editar</a>
-                    <form class="btn_admin" action="{{route('admin.productos.edit', $product->id)}}" method="GET">
-                      @csrf
-                      @method('GET')
-                    </form>
+                     <a href="{{route('admin.productos.edit', $product->id)}}" class="btn-table"><i class="zmdi zmdi-edit"></i> Editar</a>
+     
       
                      <a href="" class="btn-table"> <i class="zmdi zmdi-delete"></i> Eliminar</a>
                     <form class="btn_admin" action="{{ route('admin.productos.destroy', $product->id)}}" method="DELETE">
