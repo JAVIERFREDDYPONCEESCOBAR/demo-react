@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Modelo\admin\User;
 use App\Modelo\admin\Role;
 use Gate;
+use Session;
+use Redirect;
 use Illuminate\Http\Request;
 
 
@@ -62,9 +64,21 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $datosUsuario=request()->all();
-
+    {   
+        $this->validateData($request);
+        $data = $request->all();
+        $user = User::create([
+           'name'     =>$data['nombre'],
+           'email'    =>$data['email'],
+           'edad'     =>$data['edad'],
+           'telefono' =>$data['telefono'],
+           'genero'   =>$data['genero'],
+           'productos_activados'=>'no',
+           'password' => bcrypt($data['password']),
+       ]);
+       $adminRole = Role::where('name',$data['tipo_usuario'])->first();
+       $user->roles()->attach($adminRole);
+       return redirect(route('admin.users.index'))->with('success','Usuario agregado correctamente');
     }
 
     /**
@@ -86,16 +100,14 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-       //  if(Gate::denies('edit-users')){
-       //  return redirect(route('admin.usuario.index'));
-       //  }
-       $show = User::findOrFail($user->id);
-
-        $roles = Role::all();
+       $show       = User::findOrFail($user->id);
+       $roles      = Role::all();
+       $actualroll = $user->roles()->get()->pluck('name')[0];
         return view('admin.usuario.edit',[
             'user'=>$user,
             'roles'=>$roles,
-            'aeditar'=>$show
+            'aeditar'=>$show,
+            'actualroll'=>$actualroll
         ]);
 
     }
@@ -109,19 +121,17 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        
-     $user->roles()->sync($request->roles);
-     $user->name  = $request->name;
-     $user->email = $request->email;
-
-     if($user->save()){
-        $recuest->session()->flash('success', $user->name.'Usuario actualizado con exito');
+            $this->validateData($request);
+            $data = $request->all();
+            $user->fill($data);
+            $user->roles()->sync($request->tipo_usuario);
+           
+     if($user->update()){
+        return redirect(route('admin.users.index'))->with('success','Usuario '.$user->name.' actualizado con exito');
      }else{
-        $recuest->session()->flash('error','Usuario no actualizado');
+        return redirect(route('admin.users.index'))->with('error','Usuario no actualizado');
      }
      
-     return redirect()->route('admin.users.index');
-
     }
 
     /**
@@ -132,34 +142,30 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        dd('Eliminando:'.$user->id);
-              //  if(Gate::denies('delete-users')){
-             //   return redirect(route('admin.users.index'));
-            //    }
-           
-           
-           // $user->roles()->detach();
-          //  $user->delete();
-         //   return redirect()->route('admin.users.index');
+           $user->roles()->detach();
+           $user->delete();
+           return redirect(route('admin.users.index'))->with('success','Usuario eliminado correctamente');
     }
 
     private function validateData($data){
 
         return $this->validate($data,[
-            'promo_fecha_inicio'       => ['required'],
-            'promo_fecha_termino'      => ['required'],
-            'periodo'                  => ['required'],
-            'plaza'                    => ['required'],
-            'imagen'                   => (!$data->id || $data->imagen) ? ['required','image:png,jpeg,jpg','dimensions:width=500','dimensions:height=600'] : ''
+            'nombre'     => ['required'],
+            'email'      => ['required'],
+            'password'   => ['required'],
+            'telefono'   => ['required'],
+            'edad'       => ['required'],
+            'genero'     => ['required'],
+            'tipo_usuario'=>['required']
         ],
         [
-
-            'periodo.required'=>'Periodo requerido',
-            'plaza.required'=>'Plaza requerida',
-            'promo_fecha_inicio.required'=>'Fecha requerida',
-            'promo_fecha_termino.required'=>'Fecha requerida',
-            'imagen.dimensions'=>'La imagen no es de las dimenciones soportadas',
-            'imagen.required'=>'Imagen requerida'
+            'nombre.required'=>'Nombre requerido',
+            'email.required'=>'E-mail requerido',
+            'password.required'=>'Contraseña requerido',
+            'telefono.required'=>'Teléfono requerido',
+            'edad.dimensions'=>'Edad requerido',
+            'genero.required'=>'Genero requerido',
+            'tipo_usuario.required'=>'Rol requerido'
         ]);
     }
 

@@ -6,6 +6,9 @@ use App\Modelo\admin\User;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use Gate;
+use Session;
+use Redirect;
 
 class AdminController extends Controller
 {

@@ -18,8 +18,10 @@ class CreateProductosclientesTable extends Migration
             $table->unsignedBigInteger('id_producto');
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_id');
+            $table->text('status')->nullable();
             $table->string('precioactual');
             $table->string('precionuevo');
+            $table->text('slug')->nullable();
             $table->timestamps();
         });
     }

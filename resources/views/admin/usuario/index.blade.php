@@ -16,6 +16,8 @@
           <div class="row">
             <div class="col-md-6">
               <h2>Bienvenido: {{Auth::user()->name}}</h2>
+              @include('admin.alertas.alerts')
+
             </div>
             <div class="col-md-6 ">
               <ul>

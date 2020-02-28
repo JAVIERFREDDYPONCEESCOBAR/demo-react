@@ -27,12 +27,6 @@ class ProductosClienteController extends Controller
 
     public function index(Request $request)
     {    
-        Log::info($request);
-        // if(empty($request->mostrar_producto)){
-        //     $mostarproducto = 
-        // }
-        
-
         $Products = Products::all();
         return view('admin.product.index',
         ['products'  =>$Products,
@@ -47,7 +41,6 @@ class ProductosClienteController extends Controller
         $Products = 'freddy funciona';
         $Productscliente = Productoscliente::all();
         return view('admin.product.index',['products'=>$Products]);
-        //dd('freddy');
     }
 
     /**

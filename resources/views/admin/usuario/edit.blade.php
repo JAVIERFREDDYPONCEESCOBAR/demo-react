@@ -37,7 +37,8 @@
        
           <div  class="col-md-10">
 
-            <form action="{{route('admin.users.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.users.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+              @method('PATCH')
                 @csrf
                  <div class="form-group">
                      <label for="sku">Nombre</label>
@@ -66,18 +67,30 @@
                     <label for="genero">Genero</label>
                      <select id="genero" name="genero" class="custom-select" required>
                         <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="Masculino">Masculino</option>
+
+                        @if($aeditar->genero=='Masculino')
+                        <option value="Masculino" selected>Masculino</option>
                         <option value="Femenino">Femenino</option>
+                        @elseif($aeditar->genero=='Femenino')
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino" selected>Femenino</option>
+                        @endif 
                       </select>
                  </div>
                     <div class="col-md-6">
-                    <label for="tipo_usuario">Tipo rol</label>
+                    <label for="tipo_usuario">Tipo rol </label>
                     <select id="tipo_usuario" name="tipo_usuario" class="custom-select" required>
                        <option value="" disabled selected>Selecciona una opción</option>
-                       @foreach ($roles as $role)
-                           <option value="{{$role->id}}">{{$role->name}}</option>
-                       @endforeach
                        
+                       @foreach ($roles as $role)
+                             @if($actualroll==$role->name)  
+                             <option value="{{$role->id}}"   selected>{{$role->name}}</option>
+                             @else
+                               <option value="{{$role->id}}"   >{{$role->name}}</option>
+                             @endif 
+                       @endforeach
+
+
                      </select>
                 </div>
             </div>
@@ -86,7 +99,7 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         <label for="password" >{{ __('Password') }}</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"  value="{{$aeditar->password}}">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -95,7 +108,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="password-confirm" >{{ __('Confirm Password') }}</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" value="{{$aeditar->password}}">
                     </div>
             </div>
                  <button class="btn-agregar-user" type="submit">Actualizar</button>
